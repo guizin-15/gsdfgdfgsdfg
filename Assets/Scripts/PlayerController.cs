@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
         Invoke("GoToGameOverScene", 2f);
 
-        GameObject.FindFirstObjectByType<GameTimer>()?.StopTimer();
+        GameObject.FindFirstObjectByType<TimeManager>()?.StopTimer();
     }
 
     void GoToGameOverScene()

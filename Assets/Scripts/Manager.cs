@@ -1,18 +1,28 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Play()
     {
-        SceneManager.LoadScene("MainScene"); // Carrega a cena chamada "SampleScene"
+        SceneManager.LoadScene("MainScene");
     }
 
-    // Update is called once per frame
-    public void Guide()
+    public void Quit()
     {
-        SceneManager.LoadScene("GuideScene"); // Carrega a cena chamada "SampleScene"
+        Application.Quit();
+        Debug.Log("Jogo encerrado.");
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadVictoryScene()
+    {
+        SceneManager.LoadScene("Victory"); // ou tela de vitória
+    }
+    public void LoadGameOverScene()
+    {
+        SceneManager.LoadScene("Game Over"); // ou tela de game over
     }
 }

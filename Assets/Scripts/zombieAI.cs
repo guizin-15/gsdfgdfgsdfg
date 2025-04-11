@@ -53,7 +53,6 @@ public class ZombieAI : MonoBehaviour
             // Flipar no eixo X
             spriteRenderer.flipX = movement.x < 0;
 
-            animator.SetBool("IsMoving", true);
         }
         else
         {
@@ -75,8 +74,6 @@ public class ZombieAI : MonoBehaviour
 
         if (movement.x != 0)
             spriteRenderer.flipX = movement.x < 0;
-
-        animator.SetBool("IsMoving", true);
     }
 
     void FixedUpdate()
@@ -106,9 +103,12 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
+    #if UNITY_EDITOR
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
+    #endif
 }
+
